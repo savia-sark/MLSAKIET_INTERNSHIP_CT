@@ -1,5 +1,3 @@
-
-```markdown
 # Competitive Engineering Tools and Software Internship
 
 Welcome to the Git repository for the **Competitive Engineering Tools and Software** internship. This program is designed to equip students with proficiency in essential engineering tools and software, crucial for achieving competitive excellence in the tech industry.
