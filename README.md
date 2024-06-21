@@ -77,7 +77,7 @@ Follow these steps to make a pull request to this repository:
    ```
 7. **Create a Pull Request:** Go to the original repository on GitHub and click the 'New Pull Request' button. Choose your branch and submit the pull request with a descriptive message.
 
-If you need help on how to make a PR, please refer to this video:[![How to Make a PR](https://img.youtube.com/vi/8lGpZkjnkt4/0.jpg)]
+If you need help on how to make a PR, please refer to this video:[![How to Make a PR](https://img.youtube.com/vi/8lGpZkjnkt4/0.jpg)](https://www.youtube.com/watch?v=8lGpZkjnkt4)
 
 ## Pull Request Requirements
 
