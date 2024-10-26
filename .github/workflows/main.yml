@@ -1,0 +1,35 @@
+name: Auto Add Branches
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  check_and_add_branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check branch name
+        id: check_branch
+        run: |
+          BRANCH_NAME="${{ github.head_ref }}"
+          echo "Branch name is: $BRANCH_NAME"
+
+          if [[ "$BRANCH_NAME" =~ _ && "$BRANCH_NAME" =~ [0-9] ]]; then
+            echo "Branch name meets criteria. Proceeding to add it."
+            echo "::set-output name=add_branch::true"
+          else
+            echo "Branch name does not meet criteria. Not adding it."
+            echo "::set-output name=add_branch::false"
+          fi
+
+      - name: Add branch if criteria met
+        if: steps.check_branch.outputs.add_branch == 'true'
+        run: |
+          echo "Adding branch to the repository..."
+          # Replace 'main' with your target branch if necessary
+          git checkout -b "${{ github.head_ref }}"
+          git push origin "${{ github.head_ref }}"
